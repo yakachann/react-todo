@@ -22,7 +22,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
     setInput(event.target.value);
   };
   const onFormSubmit = (event) => {
-    //謎③
+    //preventDefaultとはform要素に送信先が指定されていない場合、現在のURLに対してフォームの内容を送信する
     event.preventDefault();
     if (!editTodo) {
       setTodos([...todos, { id: uuidv4(), title: input, completed: false }]);

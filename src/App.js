@@ -6,7 +6,7 @@ import "./App.css";
 
 const App = () => {
 
-  //謎部分①
+  //ブラウザにデータを保存
   const initialState = JSON.parse(localStorage.getItem("todos")) || [];
   //React hock(関数コンポーネントで扱える)
   //[状態変数, 状態を変更するための関数]と定義する
@@ -14,7 +14,7 @@ const App = () => {
   const [todos, setTodos] = useState(initialState);
   const [editTodo, setEditTodo] = useState(null);
 
-  //謎部分②
+  //保存したデータの取り出し
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
